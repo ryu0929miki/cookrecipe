@@ -1,0 +1,16 @@
+<div class="contents row">
+  <div class="container">
+    <h3>レシピを投稿する</h3>
+    <%= form_with(model: @recipe, local: true) do |form| %>
+      <%= form.text_field :name, placeholder: "ニックネーム（必須）" %>
+      <div class="weight-bold-text">
+        完成品画像（必須）
+      </div>
+      <%= form.file_field :image, id:"recipe-image" %>
+      <%= form.text_area :title, placeholder: "料理名（必須 30文字まで)", maxlength:"30" %>
+      <%= form.text_area :material, placeholder: "材料（必須）", rows: "10" %>
+      <%= form.text_area :make, placeholder: "作り方（必須）", rows: "10" %>
+      <%= form.submit "SEND" %>
+    <% end %>
+  </div>
+</div>

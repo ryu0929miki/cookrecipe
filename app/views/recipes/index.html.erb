@@ -1,6 +1,7 @@
 <div class="contents row">
   <% @recipes.each do |recipe| %>
-    <div class="content_post" style="background-image: url(<%= recipe.image %>);">
+    <div class="content_post" style="background-image">
+    <%= image_tag recipe.image, class: "recipe-image" %>
       <p><%= recipe.title %></p>
       <span class="name">
         <%= recipe.name %>
