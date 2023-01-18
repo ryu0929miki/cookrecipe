@@ -1,24 +1,33 @@
 # README
+# アプリケーション名
+CookRecipe
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーション概要
+レシピの投稿、シェアを行いレシピ情報の交換やコミュニケーションをとる事ができる
+# URL
 
-Things you may want to cover:
+# テスト用アカウント
 
-* Ruby version
+# 利用方法
 
-* System dependencies
+## レシピ投稿
 
-* Configuration
+## 他者と情報交換を行う
 
-* Database creation
+# アプリケーションを作成した背景
 
-* Database initialization
+# 洗い出した要件
 
-* How to run the test suite
+# 実装した機能についての画像やGIFおよびその説明
 
-* Services (job queues, cache servers, search engines, etc.)
+# 実装予定の機能
 
-* Deployment instructions
+# データベース設計
 
-* ...
+# 画面遷移図
+
+# 開発環境
+
+# ローカルでの操作方法
+
+
