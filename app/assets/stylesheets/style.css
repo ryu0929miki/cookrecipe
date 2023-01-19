@@ -997,6 +997,18 @@ div.contents.row .success h3 {
   margin: 10px auto;
 }
 
+.content_post_botom {
+  flex-direction: column;
+  justify-content: space-around;
+  justify-content: flex-start;
+  width:100%; height:100%;
+    margin:5px; padding:10px; border:1px solid black;
+    background-color: #fff;
+    vertical-align: middle;    /* ボックス内の文字の垂直方向の位置 */
+    text-align: center;
+}
+
+
 form input,
 form textarea {
   width: 100%;
