@@ -2,6 +2,7 @@
   <p><%= @name %>さんの投稿一覧</p>
   <p>材料や作り方が知りたい場合は画像右上のボタンから詳細ページへ</p>
   <% @recipes.each do |recipe| %>
+  <%= render partial: "recipes/recipe", locals: { recipe: recipe } %>
     <div class="content_post" >
     <div class="more">
         <span><%= image_tag 'arrow_top.png' %></span>

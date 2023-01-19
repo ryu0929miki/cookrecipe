@@ -27,4 +27,26 @@
   <h3>＜作り方＞</h3>
   <span class="make"><%= @recipe.make %>
   </div>
+  <div class="container">
+    <% if user_signed_in? %>
+      <%= form_with(model: [@recipe, @comment], local: true) do |form| %>
+        <%= form.text_area :content, placeholder: "コメントする", rows: "2" %>
+        <%= form.submit "SEND" %>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+    <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% @comments.each do |comment| %>
+        <p>
+          <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
+          <%= comment.content %>
+          <% if user_signed_in? && current_user.id == comment.user_id %>
+          <%= link_to '削除', recipe_comment_path(comment.recipe.id, comment.id), method: :delete %>
+          <% end %>
+        </p>
+      <% end %>
+    </div>
+  </div>
 </div>
