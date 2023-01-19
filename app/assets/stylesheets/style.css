@@ -355,11 +355,18 @@ table {
   box-sizing: border-box;
 }
 
-img,
+
 object,
 embed {
   max-width: 100%;
   height: auto;
+}
+
+img{
+  max-height: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 object,
@@ -707,8 +714,8 @@ form input[type="submit"] {
 header.header div.header__bar.row div.grid-6 a.post {
   padding: 8px 20px;
   font-size: 14px;
-  border: 2px solid #57C3E9;
-  color: #57C3E9;
+  border: 2px solid #000;
+  color: #000;
   font-weight: bold;
   text-align: center;
   border-radius: 3px;
@@ -717,8 +724,8 @@ header.header div.header__bar.row div.grid-6 a.post {
 
 .btn:hover,
 header.header div.header__bar.row div.grid-6 a.post:hover {
-  border-color: #9bdbf2;
-  color: #9bdbf2;
+  border-color: #000;
+  color: #000;
 }
 
 .title {
@@ -738,7 +745,7 @@ header.header div.header__bar.row div.grid-6 a.post:hover {
 header.header {
   padding: 10px;
   border-bottom: 1px solid #D8D8D8;
-  background-color: #fff;
+  background-color: darksalmon;
   position: fixed;
   top: 0;
   left: 0;
@@ -797,7 +804,7 @@ header.header .user_nav span:after {
 }
 
 header.header .user_nav span:hover ul {
-  color: #57C3E9;
+  color: #000;
   display: block;
 }
 
@@ -806,20 +813,20 @@ header.header .user_nav ul {
   position: absolute;
   top: 46px;
   right: 0;
-  border-left: 1px solid #d8d8d8;
-  border-right: 1px solid #d8d8d8;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header.header .user_nav ul li {
-  background-color: #f0f0f0;
+  background-color: #000;
 }
 
 header.header .user_nav ul li a {
   display: block;
   padding: 10px 20px;
   text-align: left;
-  border-bottom: 1px solid #d8d8d8;
+  border-bottom: 1px solid #000;
 }
 
 .form {
@@ -862,12 +869,19 @@ div.contents.row div.content_post {
   margin: 20px 0;
   padding: 30px;
   position: relative;
-  height: 400px;
   color: #fff;
   background-size: cover;
   background-position: center center;
   border-radius: 3px;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.recipe-image {
+  object-fit: cover;
+
 }
 
 div.contents.row div.content_post:after {
@@ -994,7 +1008,7 @@ form textarea {
 }
 
 form input[type="submit"] {
-  background-color: #57C3E9;
+  background-color: coral;
   border-radius: 20px;
   color: #fff;
   border: 0;
