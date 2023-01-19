@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
   before_action :set_tweet, only: [:edit, :show]
 
   def index
@@ -33,6 +33,12 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @recipe.comments.includes(:user)
+  end
+
+  def search
+    @recipes = Recipe.search(params[:keyword])
   end
 
   private
