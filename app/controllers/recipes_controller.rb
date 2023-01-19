@@ -1,6 +1,9 @@
 class RecipesController < ApplicationController
+  before_action :move_to_index, except: [:index, :show]
+  before_action :set_tweet, only: [:edit, :show]
+
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -22,7 +25,6 @@ class RecipesController < ApplicationController
   end
 
   def edit
-    @recipe = Recipe.find(params[:id])
   end
 
   def update
@@ -31,11 +33,20 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
   end
 
   private
   def recipe_params
-    params.require(:recipe).permit(:name, :image, :title, :material, :make)
+    params.require(:recipe).permit(:image, :title, :material, :make).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
+  end
+
+  def set_tweet
+    @recipe = Recipe.find(params[:id])
   end
 end
