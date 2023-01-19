@@ -1,0 +1,25 @@
+<div class="contents row">
+  <div class="content_post" >
+  <%= image_tag @recipe.image, class: 'recipe-image' %>
+    <div class="more">
+      <span><%= image_tag 'arrow_top.png' %></span>
+      <ul class="more_list">
+        <li>
+          <%= link_to '編集', edit_recipe_path(@recipe.id), method: :get %>
+        </li>
+        <li>
+          <%= link_to '削除', recipe_path(@recipe.id), method: :delete %>
+        </li>
+      </ul>
+    </div>
+    <p><%= @recipe.title %></p>
+    <span class="name"><%= @recipe.name %>
+    </span>
+  </div>
+  <div class="content_post_botom" >
+  <h3>＜材料＞</h3>
+  <span class="marerial"><%= @recipe.material %>
+  <h3>＜作り方＞</h3>
+  <span class="make"><%= @recipe.make %>
+  </div>
+</div>
