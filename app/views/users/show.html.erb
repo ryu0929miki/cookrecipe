@@ -3,17 +3,5 @@
   <p>材料や作り方が知りたい場合は画像右上のボタンから詳細ページへ</p>
   <% @recipes.each do |recipe| %>
   <%= render partial: "recipes/recipe", locals: { recipe: recipe } %>
-    <div class="content_post" >
-    <div class="more">
-        <span><%= image_tag 'arrow_top.png' %></span>
-        <ul class="more_list">
-        <li>
-            <%= link_to '詳細', recipe_path(recipe.id), method: :get %>
-          </li>
-        </ul>
-      </div>
-    <%= image_tag recipe.image, class: 'recipe-image' %>
-      <p><%= recipe.title %></p>
-    </div>
   <% end %>
 </div>
